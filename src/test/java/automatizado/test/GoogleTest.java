@@ -28,4 +28,11 @@ public class GoogleTest extends BaseTest {
         assertTrue(googlePage.retornoDaPesquisaDoGooogle(), googlePage.retornoDaPesquisaDoGooogle().contains("resultado"));   
     }
 
+        @Test
+    public void TC003_deveLimparAPesquisaEPersquisaBatata(){
+        googlePage.limpaCampo();
+        googlePage.pesquisar("Batata");
+        assertTrue(googlePage.retornoDaPesquisaDoGooogle(), googlePage.retornoDaPesquisaDoGooogle().contains("resultado"));   
+    }
+
 }
