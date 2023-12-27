@@ -13,6 +13,7 @@ public class GoogleTest extends BaseTest {
 
     @BeforeClass
     public static void prepararTestes(){
+        driver.get("https://www.google.com/");
         googlePage = new GooglePO(driver);
     }
     @Test
@@ -28,11 +29,19 @@ public class GoogleTest extends BaseTest {
         assertTrue(googlePage.retornoDaPesquisaDoGooogle(), googlePage.retornoDaPesquisaDoGooogle().contains("resultado"));   
     }
 
-        @Test
+    @Test
     public void TC003_deveLimparAPesquisaEPersquisaBatata(){
         googlePage.limpaCampo();
         googlePage.pesquisar("Batata");
         assertTrue(googlePage.retornoDaPesquisaDoGooogle(), googlePage.retornoDaPesquisaDoGooogle().contains("resultado"));   
     }
 
+    
+    @Test
+    public void TC004_deveLimparAPesquisaEPersquisagoku(){
+        googlePage.limpaCampo();
+        googlePage.pesquisar("Goku");
+        assertTrue(googlePage.retornoDaPesquisaDoGooogle(), googlePage.retornoDaPesquisaDoGooogle().contains("resultado"));   
+    }
+ 
 }
