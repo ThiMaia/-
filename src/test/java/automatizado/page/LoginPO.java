@@ -43,4 +43,11 @@ public class LoginPO extends BasePO{
         senhaParaLogin.clear();
     }
 
+    public void executarAcaoDeLogin(String email, String senha){
+        limpaLogin();
+        escrever(emailParaLogin , email);
+        escrever(senhaParaLogin, senha);
+        confirmarLogin();
+    }
+
 }
