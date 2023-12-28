@@ -26,10 +26,6 @@ public class LoginPO extends BasePO{
     @FindBy(id = "btn-adicionar")
     public WebElement botaoDeAdicionarProduto;
 
-    public void escrever(WebElement input, String texto){
-        input.sendKeys(texto + Keys.TAB);
-    }
-
     public void confirmarLogin(){
         botaoDeLogin.click();
     }

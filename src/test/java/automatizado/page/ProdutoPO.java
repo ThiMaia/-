@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import automatizado.builder.ProdutoBuilder;
+
 public class ProdutoPO extends BasePO{
 
     public ProdutoPO(WebDriver driver) {
@@ -49,13 +51,49 @@ public class ProdutoPO extends BasePO{
     @FindBy(css = "div.modal-header>h4")
     public WebElement tituloDoWidgetProduto;
 
+    
+    @FindBy(css = "div>div>div>div>button.close")
+    public WebElement botaoXDeCriacaoDeProduto;
+
+
     public String retornarTituloDaPaginaDeProduto(){
         return driver.getTitle();
     }
 
+    public void clicarCriarProdutoPrimeiraVez(){
+        botaoCriarProdutoElement.click();
+        botaoCriarProdutoElement.click();
+        botaoDeSair.click();
+        botaoDeSair.click();
+    }
+
     public void clicarCriarProduto(){
         botaoCriarProdutoElement.click();
-        botaoCriarProdutoElement.click();
+    }
+
+    public void criarProduto(
+        String codigo,
+        String nome,
+        Integer quantidade,
+        Double valor,
+        String data
+    ){
+        escrever(inputCodigo, codigo);
+        escrever(inputNomeDoProduto, nome);
+        escrever(inputQuantidadeDoProduto, quantidade.toString());
+        escrever(inputValorDoProduto, valor.toString());
+        escrever(inputDataDoProduto, data);
+        botaoDeSalvarProdutoCriando.click();
+    }
+
+    
+    public void criarProduto(ProdutoBuilder produtoBuilder){
+        escrever(inputCodigo, produtoBuilder.codigo);
+        escrever(inputNomeDoProduto, produtoBuilder.nome);
+        escrever(inputQuantidadeDoProduto, produtoBuilder.quantidade.toString());
+        escrever(inputValorDoProduto, produtoBuilder.valor.toString());
+        escrever(inputDataDoProduto, produtoBuilder.data);
+        botaoDeSalvarProdutoCriando.click();
     }
 
 }
