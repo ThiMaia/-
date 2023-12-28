@@ -16,7 +16,7 @@ public abstract class BasePO {
     protected WebDriver driver;
     
     /**
-     * Construtor base para cria;'ao de fabrica de elementos(PageFactory)'
+     * Construtor base para criacao de fabrica de elementos(PageFactory)'
      * @param driver (Driver da pagina atual.)
      */
     public BasePO(WebDriver driver){

@@ -50,4 +50,8 @@ public class LoginPO extends BasePO{
         confirmarLogin();
     }
 
+    public String retornarTituloDaPaginaDeProduto(){
+        return driver.getTitle();
+    }
+
 }

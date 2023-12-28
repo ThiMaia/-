@@ -1,10 +1,14 @@
 package automatizado.test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.BeforeClass;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 import automatizado.page.LoginPO;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LoginTest extends BaseTest{
 
     private static LoginPO loginPage;
@@ -56,6 +60,7 @@ public class LoginTest extends BaseTest{
     public void TC007_loginEsenhaCorretos(){
         loginPage.executarAcaoDeLogin("souzathiago021992@gmail.com", "teste1234");
         loginPage.botaoDeAdicionarProduto.isEnabled();
+        assertEquals(loginPage.retornarTituloDaPaginaDeProduto(), "Controle de Produtos");
         driver.get(URL_BASE);
     }
 
