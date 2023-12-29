@@ -65,8 +65,8 @@ public class ProdutoBuilder {
 
         ProdutoPO.escrever(ProdutoPO.inputCodigo, codigo);
         ProdutoPO.escrever(ProdutoPO.inputNomeDoProduto, nome);
-        ProdutoPO.escrever(ProdutoPO.inputQuantidadeDoProduto, quantidade.toString());
-        ProdutoPO.escrever(ProdutoPO.inputValorDoProduto, valor.toString());
+        ProdutoPO.escrever(ProdutoPO.inputQuantidadeDoProduto, (quantidade != null) ? quantidade.toString() : "");
+        ProdutoPO.escrever(ProdutoPO.inputValorDoProduto, (valor != null) ? valor.toString() : "");
         ProdutoPO.escrever(ProdutoPO.inputDataDoProduto, data);
         ProdutoPO.botaoDeSalvarProdutoCriando.click();
        

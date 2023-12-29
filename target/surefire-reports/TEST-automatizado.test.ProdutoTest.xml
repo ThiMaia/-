@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="automatizado.test.GoogleTest" time="13.062" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="automatizado.test.ProdutoTest" time="6.639" tests="11" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -60,8 +60,15 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="TC003_deveLimparAPesquisaEPersquisaBatata" classname="automatizado.test.GoogleTest" time="3.146"/>
-  <testcase name="TC004_deveLimparAPesquisaEPersquisagoku" classname="automatizado.test.GoogleTest" time="2.652"/>
-  <testcase name="TC001_devePesquisarNoGoogleOTextoBatataDoce" classname="automatizado.test.GoogleTest" time="2.568"/>
-  <testcase name="TC002_deveLimparAPesquisaEPersquisaBatataFrita" classname="automatizado.test.GoogleTest" time="1.016"/>
+  <testcase name="TC0001_deveAbrirModaldeCadastroAoClicarEmCriar" classname="automatizado.test.ProdutoTest" time="0.12"/>
+  <testcase name="TC0002_deveCriarProduto" classname="automatizado.test.ProdutoTest" time="0.399"/>
+  <testcase name="TC0003_naoDeveCriarProdutoSemCodigo" classname="automatizado.test.ProdutoTest" time="0.419"/>
+  <testcase name="TC0004_naoDeveCriarProdutoSemNome" classname="automatizado.test.ProdutoTest" time="0.407"/>
+  <testcase name="TC0005_naoDeveCriarProdutoSemData" classname="automatizado.test.ProdutoTest" time="0.391"/>
+  <testcase name="TC0006_naoDeveCriarProdutoSemQuantidade" classname="automatizado.test.ProdutoTest" time="0.419"/>
+  <testcase name="TC0007_naoDeveCriarProdutoSemValor" classname="automatizado.test.ProdutoTest" time="0.396"/>
+  <testcase name="TC0008_naoDeveCriarProdutoSemCodigoESemNome" classname="automatizado.test.ProdutoTest" time="0.407"/>
+  <testcase name="TC0009_naoDeveCriarProdutoSemCodigoESemNomeESemData" classname="automatizado.test.ProdutoTest" time="0.411"/>
+  <testcase name="TC0010_naoDeveCriarProdutoSemCodigoESemNomeESemDataEsemValor" classname="automatizado.test.ProdutoTest" time="0.384"/>
+  <testcase name="TC0011_naoDeveCriarProdutoSemCodigoESemNomeESemDataEsemValorESemQuantidade" classname="automatizado.test.ProdutoTest" time="0.402"/>
 </testsuite>

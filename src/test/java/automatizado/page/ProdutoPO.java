@@ -55,6 +55,8 @@ public class ProdutoPO extends BasePO{
     @FindBy(css = "div>div>div>div>button.close")
     public WebElement botaoXDeCriacaoDeProduto;
 
+    @FindBy(css = "div>div>div>div>div>div>span")
+    public WebElement spanMensagem;
 
     public String retornarTituloDaPaginaDeProduto(){
         return driver.getTitle();
@@ -94,6 +96,10 @@ public class ProdutoPO extends BasePO{
         escrever(inputValorDoProduto, produtoBuilder.valor.toString());
         escrever(inputDataDoProduto, produtoBuilder.data);
         botaoDeSalvarProdutoCriando.click();
+    }
+
+    public String spanMensagemErroProduto(){
+        return spanMensagem.toString();
     }
 
 }

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: automatizado.test.GoogleTest
+Test set: automatizado.test.ProdutoTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.062 s - in automatizado.test.GoogleTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.639 s - in automatizado.test.ProdutoTest

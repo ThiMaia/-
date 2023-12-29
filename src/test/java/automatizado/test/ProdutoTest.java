@@ -17,6 +17,7 @@ public class ProdutoTest extends BaseTest{
 
     private static LoginPO loginPage;
     private static ProdutoPO controleProdutoPage;
+    public String mensagem2 = "Todos os campos são obrigatórios para o cadastro!";
 
     @BeforeClass
     public static void prepararTestes(){
@@ -42,24 +43,147 @@ public class ProdutoTest extends BaseTest{
         ProdutoBuilder produtoBuilder = new ProdutoBuilder(controleProdutoPage);
 
         produtoBuilder
-        .adicionarQuantidade(1)
-        .adicionarValor(50.40)
-        .adicionarNome("M<artelo")
         .builder();
 
+        controleProdutoPage.botaoDeSair.click();
+    }
+
+    @Test
+    public void TC0003_naoDeveCriarProdutoSemCodigo(){
+        controleProdutoPage.clicarCriarProduto();
+        ProdutoBuilder produtoBuilder = new ProdutoBuilder(controleProdutoPage);
 
         produtoBuilder
-        .adicionarQuantidade(2)
-        .adicionarValor(51.40)
-        .adicionarNome("Jungle")
+        .adicionarCodigo("")
         .builder();
 
-         produtoBuilder
-        .adicionarQuantidade(2)
-        .adicionarValor(51.40)
-        .adicionarNome("Jungle")
-        .builder();
-
-        controleProdutoPage.botaoXDeCriacaoDeProduto.click();
+        
+        assertEquals(mensagem2, controleProdutoPage.spanMensagem.getText());
+        controleProdutoPage.botaoDeSair.click();
     }
+
+    
+    @Test
+    public void TC0004_naoDeveCriarProdutoSemNome(){
+        controleProdutoPage.clicarCriarProduto();
+        ProdutoBuilder produtoBuilder = new ProdutoBuilder(controleProdutoPage);
+
+        produtoBuilder
+        .adicionarNome("")
+        .builder();
+
+        
+        assertEquals(mensagem2, controleProdutoPage.spanMensagem.getText());
+        controleProdutoPage.botaoDeSair.click();
+    }
+
+    @Test
+    public void TC0005_naoDeveCriarProdutoSemData(){
+        controleProdutoPage.clicarCriarProduto();
+        ProdutoBuilder produtoBuilder = new ProdutoBuilder(controleProdutoPage);
+
+        produtoBuilder
+        .adicionarData("")
+        .builder();
+
+        
+        assertEquals(mensagem2, controleProdutoPage.spanMensagem.getText());
+        controleProdutoPage.botaoDeSair.click();
+    }
+
+    @Test
+    public void TC0006_naoDeveCriarProdutoSemQuantidade(){
+        controleProdutoPage.clicarCriarProduto();
+        ProdutoBuilder produtoBuilder = new ProdutoBuilder(controleProdutoPage);
+
+        produtoBuilder
+        .adicionarQuantidade(null)
+        .builder();
+
+        
+        assertEquals(mensagem2, controleProdutoPage.spanMensagem.getText());
+        controleProdutoPage.botaoDeSair.click();
+    }
+
+    @Test
+    public void TC0007_naoDeveCriarProdutoSemValor(){
+        controleProdutoPage.clicarCriarProduto();
+        ProdutoBuilder produtoBuilder = new ProdutoBuilder(controleProdutoPage);
+
+        produtoBuilder
+        .adicionarValor(null)
+        .builder();
+
+        
+        assertEquals(mensagem2, controleProdutoPage.spanMensagem.getText());
+        controleProdutoPage.botaoDeSair.click();
+    }
+
+    @Test
+    public void TC0008_naoDeveCriarProdutoSemCodigoESemNome(){
+        controleProdutoPage.clicarCriarProduto();
+        ProdutoBuilder produtoBuilder = new ProdutoBuilder(controleProdutoPage);
+
+        produtoBuilder
+        .adicionarCodigo("")
+        .adicionarNome("")
+        .builder();
+
+        
+        assertEquals(mensagem2, controleProdutoPage.spanMensagem.getText());
+        controleProdutoPage.botaoDeSair.click();
+    }
+
+    @Test
+    public void TC0009_naoDeveCriarProdutoSemCodigoESemNomeESemData(){
+        controleProdutoPage.clicarCriarProduto();
+        ProdutoBuilder produtoBuilder = new ProdutoBuilder(controleProdutoPage);
+
+        produtoBuilder
+        .adicionarCodigo("")
+        .adicionarNome("")
+        .adicionarData("")
+        .builder();
+
+        
+        assertEquals(mensagem2, controleProdutoPage.spanMensagem.getText());
+        controleProdutoPage.botaoDeSair.click();
+    }
+
+    @Test
+    public void TC0010_naoDeveCriarProdutoSemCodigoESemNomeESemDataEsemValor(){
+        controleProdutoPage.clicarCriarProduto();
+        ProdutoBuilder produtoBuilder = new ProdutoBuilder(controleProdutoPage);
+
+        produtoBuilder
+        .adicionarCodigo("")
+        .adicionarNome("")
+        .adicionarData("")
+        .adicionarValor(null)
+        .builder();
+
+        
+        assertEquals(mensagem2, controleProdutoPage.spanMensagem.getText());
+        controleProdutoPage.botaoDeSair.click();
+    }
+
+    @Test
+    public void TC0011_naoDeveCriarProdutoSemCodigoESemNomeESemDataEsemValorESemQuantidade(){
+        controleProdutoPage.clicarCriarProduto();
+        ProdutoBuilder produtoBuilder = new ProdutoBuilder(controleProdutoPage);
+
+        produtoBuilder
+        .adicionarCodigo("")
+        .adicionarNome("")
+        .adicionarData("")
+        .adicionarValor(null)
+        .adicionarQuantidade(null)
+        .builder();
+
+        
+        assertEquals(mensagem2, controleProdutoPage.spanMensagem.getText());
+        controleProdutoPage.botaoDeSair.click();
+    }
+
+
 }

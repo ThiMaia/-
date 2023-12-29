@@ -7,15 +7,21 @@ import automatizado.page.GooglePO;
 
 
 
+/**Classe que testa parcialmente a pesquisa do google */
+
 public class GoogleTest extends BaseTest {
 
+    /**Criar uma instancia da classe GooglePo para ter acesso aos metodos e propriedades publicas*/
     private static GooglePO googlePage;
 
+    /*classe que atualiza a informa;'ao de url base para teste do google' */
     @BeforeClass
     public static void prepararTestes(){
         driver.get("https://www.google.com/");
         googlePage = new GooglePO(driver);
     }
+
+    /**incio dos testes do google */
     @Test
     public void TC001_devePesquisarNoGoogleOTextoBatataDoce(){
         googlePage.pesquisar("Batata Doce");
